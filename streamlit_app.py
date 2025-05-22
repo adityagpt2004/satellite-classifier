@@ -36,7 +36,7 @@ if uploaded_file is not None:
         image = Image.open(uploaded_file).convert("RGB")
         st.image(image, caption="Uploaded Image", use_column_width=True)
 
-        img = image.resize((64, 64))               # Resize to model input
+        img = image.resize((128, 128))               # Resize to model input
         img = np.array(img) / 255.0                # Normalize
         img = np.expand_dims(img, axis=0)          # Add batch dimension
 
